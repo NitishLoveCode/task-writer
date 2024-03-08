@@ -1,13 +1,13 @@
 const createNewToDo = require("../models/createToDo");
 
 const addToto = async (req, res) => {
-  const { todo } = req.body;
-  if (!todo) {
+  const { todoName } = req.body;
+  if (!todoName) {
     res.status(400).json({ message: "Bed request" });
   }
   try {
     const creatNewTODo = await createNewToDo.create({
-      todoName: todo,
+      todoName: todoName,
     });
     res.status(201).json(creatNewTODo);
   } catch (error) {

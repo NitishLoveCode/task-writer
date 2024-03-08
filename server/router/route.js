@@ -5,6 +5,7 @@ const auth = require("../midleware/auth");
 const { getAllToDo } = require("../logic/gitAllToDo");
 const addToto = require("../logic/addToDo");
 const validAuth = require("../logic/validAuth");
+const removeTodo = require("../logic/removeTodo");
 
 const routers = express.Router();
 
@@ -24,9 +25,12 @@ routers.route("/get-all-todo").get(auth, getAllToDo);
 //@API: /api/v1/add-todo
 routers.route("/add-todo").post(auth, addToto);
 
+//@Des: remove Tdo
+//@API: /api/v1/remove-todo
+routers.route("/remove-todo").delete(auth,removeTodo);
+
 //@Des: Cheack if use has valid cookies or not if not redirect ot login page
 //@API: /api/v1/validAuth
 routers.route("/validAuth").get(auth, validAuth);
-
 
 module.exports = routers;

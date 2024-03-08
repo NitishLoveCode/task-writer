@@ -8,6 +8,7 @@ const auth =async(req, res, next) =>{
         return
     }
     const isValidToken = verifyToken(getCokie)
+    console.log("is valid token", isValidToken)
     if(!isValidToken){
         res.status(401).json({message:"Unauthorized."})
         return
