@@ -35,12 +35,10 @@ const AddToDo = () => {
           type="text"
           name="newtodo"
           placeholder="New to do"
-          value={newTodo}
-          onChange={(e)=>setNewTodo(e.target.value)}
         />
       </div>
       <div className="bg-green-500 w-20 flex justify-center p-3 rounded-xl text-white cursor-pointer hover:bg-green-400">
-        <button onClick={()=> addNewTodo()}>Add+</button>
+        <button>Add+</button>
       </div>
     </div>
   );
