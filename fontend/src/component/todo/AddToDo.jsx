@@ -24,9 +24,18 @@ const AddToDo = () => {
     const status = responseBack.json()
     if(responseBack.status === 201){
       setAllToDoList( await getAllToDo())
+      setNewTodo("")
     }
     }
   }
+
+  const addNewToDoEnter = (event) =>{
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      addNewTodo();
+    }
+  }
+
   return (
     <div className="flex bg-green-100 p-10 justify-center gap-4 items-center">
       <div className="border border-gray-300 w-[50%] rounded-xl">
@@ -34,11 +43,14 @@ const AddToDo = () => {
           className="w-full outline-none rounded-xl h-12 pl-2"
           type="text"
           name="newtodo"
+          value={newTodo}
+          onChange={(e)=>setNewTodo(e.target.value)}
           placeholder="New to do"
+          onKeyDown={addNewToDoEnter}
         />
       </div>
       <div className="bg-green-500 w-20 flex justify-center p-3 rounded-xl text-white cursor-pointer hover:bg-green-400">
-        <button>Add+</button>
+        <button onClick={()=>addNewTodo()}>Add+</button>
       </div>
     </div>
   );

@@ -21,8 +21,6 @@ const Home = () => {
     <div>
       <AddToDo />
       <AllToDo/>
-      <AllToDo/>
-      <AllToDo/> 
     </div>
   );
 };

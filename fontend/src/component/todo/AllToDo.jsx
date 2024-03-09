@@ -10,6 +10,7 @@ const AllToDo = () => {
 
  const getAllTodo = async () => {
     const allData = await getAllToDo()
+    console.log("888fdsafsaffffffffffffff",allData)
     setAllToDoList(allData);
   };
 
